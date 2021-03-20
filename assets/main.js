@@ -9,9 +9,37 @@
 * source  : https://github.com/miniurl/miniurl.github.io
 */
 $(document).ready(function(){
-  $("#btn").click(function(e){
+  $("#create").submit(function(e){
       e.preventDefault();
-      let query = $("#query").val();
+      let query = $("#createquery").val();
+      let url = "https://miniurlid.000webhostapp.com/app/fileproxy?url=" + encodeURIComponent("https://is.gd/create.php?format=simple&logstats=1&url=" + encodeURIComponent(query));
+      if(query !== ""){ 
+        $.ajax({
+          url: url,
+          method: "GET",
+          success: function(data){
+            if (data.slice(0,6) == "Error:"){
+              $("#shortened").html("Error shortening URL");
+              $("#shortened").attr("href",location.href);
+            } else {
+              $("#createsuccess").css("display", "block");
+              $("#shortened").html(data);
+              $("#shortened").attr("href",data);
+            }
+          },
+          error: function(){
+            $("#shortened").html("Error - please check your browser or internet settings");
+            $("#shortened").attr("href",location.href);
+          }
+        });
+      } else {
+          $("#shortened").html("Form cannot be empty");
+          $("#shortened").attr("href",location.href);
+      }
+  })
+  $("#retrieve").submit(function(e){
+      e.preventDefault();
+      let query = $("#retrievequery").val();
       let url = "https://miniurlid.000webhostapp.com/api/get-url?alias=" + query;
       if(query !== ""){ 
         $.ajax({
@@ -22,6 +50,7 @@ $(document).ready(function(){
               $("#unshortened").html("No alias found");
               $("#unshortened").attr("href",location.href);
             } else {
+              $("#retrievesuccess").css("display", "block");
               $("#unshortened").html(data);
               $("#unshortened").attr("href",data);
             }
@@ -32,7 +61,7 @@ $(document).ready(function(){
           }
         });
       } else {
-          $("#unshortened").html("This cannot be empty");
+          $("#unshortened").html("Form cannot be empty");
           $("#unshortened").attr("href",location.href);
       }
   })

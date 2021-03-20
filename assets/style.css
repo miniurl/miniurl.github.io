@@ -53,3 +53,6 @@ input[type=text], input[type=number], textarea {
   border-radius: 4px;
   box-sizing: border-box;
 }
+#createsuccess, #retrievesuccess {
+  display: none;
+}

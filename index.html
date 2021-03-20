@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Retrieve Unshortened Miniurl</title>
+<title>Miniurl.id Archive</title>
 <link href="assets/style.css" type="text/css" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
 <meta name="robots" content="none" />
@@ -11,11 +11,23 @@
     <h2>Retrieve Unshortened Miniurl</h2>
     <div class="maxwidth">
     	<div class="form">
-        	<label for="input">miniurl.id/</label>
-            <input type="text" id="query">
-            <input type="button" id="btn" value="Retrieve">
-            <label>The Miniurl redirects to:</label><br>
+            <form id="create">
+            <label>URL Shortener</label>
+        	  <label for="input">miniurl.id/</label>
+            <input type="url" id="createquery">
+            <input type="submit" id="btn" value="Create">
+            <label id="createsuccess">Shortened URL:</label><br>
+            <a id="shortened" href="" target="_blank" rel="noreferrer noopenner nofollow"></a>
+            </form>
+            <br>
+            <form id="retrieve">
+            <label>Retrieve Unshortened Miniurl</label>
+        	  <label for="input">miniurl.id/</label>
+            <input type="text" id="retrievequery">
+            <input type="submit" id="btn" value="Retrieve">
+            <label id="retrievesuccess">The Miniurl redirects to:</label><br>
             <a id="unshortened" href="" target="_blank" rel="noreferrer noopenner nofollow"></a>
+            </form>
         </div>
     </div>
   </center>

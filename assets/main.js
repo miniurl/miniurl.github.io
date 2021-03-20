@@ -19,6 +19,7 @@ $(document).ready(function(){
           method: "GET",
           success: function(data){
             if (data.slice(0,6) == "Error:"){
+              $("#createsuccess").css("display", "none");
               $("#shortened").html("Error shortening URL");
               $("#shortened").attr("href",location.href);
             } else {
@@ -28,11 +29,13 @@ $(document).ready(function(){
             }
           },
           error: function(){
+            $("#createsuccess").css("display", "none");
             $("#shortened").html("Error - please check your browser or internet settings");
             $("#shortened").attr("href",location.href);
           }
         });
       } else {
+          $("#createsuccess").css("display", "none");
           $("#shortened").html("Form cannot be empty");
           $("#shortened").attr("href",location.href);
       }
@@ -47,6 +50,7 @@ $(document).ready(function(){
           method: "GET",
           success: function(data){
             if (data.slice(0,6) == "<br />"){
+              $("#retrievesuccess").css("display", "none");
               $("#unshortened").html("No alias found");
               $("#unshortened").attr("href",location.href);
             } else {
@@ -56,11 +60,13 @@ $(document).ready(function(){
             }
           },
           error: function(){
+            $("#retrievesuccess").css("display", "none");
             $("#unshortened").html("Error - please check your browser or internet settings");
             $("#unshortened").attr("href",location.href);
           }
         });
       } else {
+          $("#retrievesuccess").css("display", "none");
           $("#unshortened").html("Form cannot be empty");
           $("#unshortened").attr("href",location.href);
       }

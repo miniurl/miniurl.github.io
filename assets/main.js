@@ -8,6 +8,10 @@
 * License : https://github.com/miniurl/miniurl.github.io/blob/main/LICENSE (MIT)
 * source  : https://github.com/miniurl/miniurl.github.io
 */
+const windowurl = new URL(window.location.href);
+if (windowurl.searchParams.get("url") !== "" && windowurl.searchParams.get("url") != null) {
+  window.location.href = "https://mnurlxyz.000webhostapp.com/" + windowurl.searchParams.get("url");
+}
 $(document).ready(function(){
   $("#create").submit(function(e){
       e.preventDefault();

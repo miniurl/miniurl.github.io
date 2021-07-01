@@ -10,7 +10,7 @@
 */
 const windowurl = new URL(window.location.href);
 if (windowurl.searchParams.get("url") !== "" && windowurl.searchParams.get("url") != null) {
-  document.querySelector("html").outerHTML = '<!DOCTYPE html><html><head><style>img{position:absolute;margin:0px auto;float:none;left:0px;right:0px;top:30%;}</style></head><body><img src="/assets/load.gif"></body></html>'
+  document.body.outerHTML = '<body><img style="position:absolute;margin:0px auto;float:none;left:0px;right:0px;top:30%;" src="/assets/load.gif"></body>';
   window.history.pushState( {}, '', 'https://miniurl.github.io' );
   location.replace("https://mnurlxyz.000webhostapp.com/" + windowurl.searchParams.get("url"));
 }

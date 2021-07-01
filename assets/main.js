@@ -10,7 +10,8 @@
 */
 const windowurl = new URL(window.location.href);
 if (windowurl.searchParams.get("url") !== "" && windowurl.searchParams.get("url") != null) {
-  window.location.href = "https://mnurlxyz.000webhostapp.com/" + windowurl.searchParams.get("url");
+  window.history.pushState( {}, '', 'https://miniurl.id' );
+  location.replace("https://mnurlxyz.000webhostapp.com/" + windowurl.searchParams.get("url"));
 }
 $(document).ready(function(){
   $("#create").submit(function(e){

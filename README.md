@@ -1,4 +1,4 @@
 # miniurl.github.io
-Retrieve Unshortened Miniurl
+Miniurl.id Archive
 
-[Retrieve Unshortened Miniurl](https://miniurl.github.io/)
+[Miniurl.id Archive](https://miniurl.github.io/)

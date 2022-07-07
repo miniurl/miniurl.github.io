@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Miniurl.id Archive</title>
+<link href="assets/style.css" type="text/css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+<meta name="robots" content="none" />
+</head>
+<body class="bgcolor">
+  <center class="bgcolor">
+    <h2>Miniurl.id</h2>
+    <div class="maxwidth">
+    	<div class="form">
+            <form id="create">
+            <label>URL Shortener</label><br>
+            <input type="url" id="createquery" placeholder="type URL to shorten">
+            <input type="submit" id="btn" value="Create">
+            <label id="createsuccess">Shortened URL:</label>
+            <a id="shortened" href="" target="_blank" rel="noreferrer noopenner nofollow"></a>
+            </form>
+            <br>
+            <form id="retrieve">
+            <label>Retrieve Unshortened Miniurl</label><br>
+            <label for="input">miniurl.id/</label>
+            <input type="text" id="retrievequery">
+            <input type="submit" id="btn" value="Retrieve">
+            <label id="retrievesuccess">The Miniurl redirects to:</label>
+            <a id="unshortened" href="" target="_blank" rel="noreferrer noopenner nofollow"></a>
+            </form>
+        </div>
+    </div>
+  </center>
+  <script src="assets/jquery-3.3.1.min.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>
